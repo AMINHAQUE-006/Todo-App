@@ -1,7 +1,11 @@
 const submitButton = document.querySelector(".btn-outline-secondary");
 const inputContainer = document.querySelector(".input-container");
 const inputField = document.querySelector(".form-control");
-const todoList = document.querySelector(".todo-list");
+const todoList = document.querySelector(".todos-list");
+
+
+const canceledTodo = document.querySelector(".Canceled-todos")
+const doneTodo = document.querySelector(".Completed-todos")
 
 submitButton.addEventListener("click", () => {
   submitTodo()
@@ -14,30 +18,51 @@ function submitTodo() {
 
     const todoListItem = document.createElement("li");
     const span = document.createElement("span")
-    const icon = document.createElement("i")
+    const crossIcon = document.createElement("i")
+    const doneIcon = document.createElement("i")
+    const iconContainer = document.createElement("span");
 
     todoListItem.classList.add("list-group-item")
-    icon.classList.add("fa-regular", "fa-circle-xmark")
+
+    crossIcon.classList.add("fa-regular", "fa-circle-xmark")
+    doneIcon.classList.add("fa-regular", "fa-circle-check")
 
     span.innerText = inputField.value
 
-
     todoListItem.appendChild(span);
-    todoListItem.appendChild(icon);
+    iconContainer.appendChild(doneIcon)
+    iconContainer.appendChild(crossIcon)
+    todoListItem.appendChild(iconContainer)
     todoList.appendChild(todoListItem);
     
-    icon.addEventListener("click", () => {
-      todoListItem.remove();  
+    crossIcon.addEventListener("click", () => {
+      canceledTodo.appendChild(todoListItem)
+      todoListItem.removeChild(iconContainer)
     })
 
-    icon.addEventListener("mouseover", () => {
-      todoListItem.lastChild.classList.remove("fa-regular")
-      todoListItem.lastChild.classList.add("fa-solid")
+    doneIcon.addEventListener("click", () => {
+      doneTodo.appendChild(todoListItem)
+      todoListItem.removeChild(iconContainer)
+    })
+
+    crossIcon.addEventListener("mouseover", () => {
+      iconContainer.lastChild.classList.remove("fa-regular")
+      iconContainer.lastChild.classList.add("fa-solid")
+    })
+
+    doneIcon.addEventListener("mouseover", () => {
+      iconContainer.firstChild.classList.remove("fa-regular")
+      iconContainer.firstChild.classList.add("fa-solid")
     })
     
-    icon.addEventListener("mouseout", () => {
-      todoListItem.lastChild.classList.remove("fa-solid")
-      todoListItem.lastChild.classList.add("fa-regular")
+    crossIcon.addEventListener("mouseout", () => {
+      iconContainer.lastChild.classList.remove("fa-solid")
+      iconContainer.lastChild.classList.add("fa-regular")
+    })
+
+    doneIcon.addEventListener("mouseout", () => {
+      iconContainer.firstChild.classList.remove("fa-solid")
+      iconContainer.firstChild.classList.add("fa-regular")
     })
 
     inputField.value = "";

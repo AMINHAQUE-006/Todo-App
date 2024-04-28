@@ -27,9 +27,23 @@
     margin: 10px !important;
 }
 
+.list-group {
+    min-height: 400px !important;
+}
+
 .list-group-item {
     display: flex !important;
     justify-content: space-between;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+i {
+    margin: 5px;
 }
 
 .fa-circle-xmark {
