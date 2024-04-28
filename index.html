@@ -5,10 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo App</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <main class="container mt-4">
+        <div class="input-container">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
+                <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+              </div>
+        </div>
+          <div class="card-container">
+            <div class="card" style="width: 18rem;  background-color: rgb(252, 6, 6);">
+                <div class="card-header">
+                  Canceled Todos
+                </div>
+                <ul class="list-group list-group-flush">
+                  <!-- deleted todos -->
+                </ul>
+              </div>
+            <div class="card" style="width: 18rem; background-color: rgb(241, 207, 13);">
+                <div class="card-header">
+                  Todo
+                </div>
+                <ul class="list-group list-group-flush todo-list">
+                  <!-- todo list -->
+                </ul>
+              </div>
+            <div class="card" style="width: 18rem; background-color: rgb(12, 154, 12);">
+                <div class="card-header">
+                  Completed Todos
+                </div>
+                <ul class="list-group list-group-flush">
+                  <!-- complete list -->
+                </ul>
+              </div>
+          </div>
+    </main>
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>

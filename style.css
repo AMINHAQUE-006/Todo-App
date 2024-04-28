@@ -1,0 +1,39 @@
+.container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+}
+
+/* card container */
+.card-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+
+/* input */
+.input-container {
+    width: 100%;
+}
+
+
+/* card */
+.card-header {
+    text-align: center !important   ;
+}
+
+.card {
+    margin: 10px !important;
+}
+
+.list-group-item {
+    display: flex !important;
+    justify-content: space-between;
+}
+
+.fa-circle-xmark {
+    cursor: pointer !important;
+}
+
+/* alert */
